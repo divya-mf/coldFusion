@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<title>Registration Form</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<center>
+<form name="form" style="border:1px solid #ccc; width:550px; "  method="POST" onsubmit="return formModule.validateForm()" >
+  <div class="container">
+    <h1>Registration Form</h1>
+    <p>Please fill in this form to register.</p>
+    <hr>
+	<i class="fa fa-user-circle" aria-hidden="true"></i> <label for="name"><b>Name</b></label>	  <span class="error" id="fError"> </span> <span class="error" id="lError"> </span>
+	<div class="nameDiv">
+	  <input type="text" placeholder="Enter First Name" name="fname" id="fname">
+  	  <input type="text" placeholder="Enter Last Name" name="lname" id="lname">
+
+	</div>
+	
+	<i class="fa fa-birthday-cake" aria-hidden="true"></i> <label for="db"><b>Birth Date</b></label> </i><span class="error" id="dbError"> </span>
+	<input type="date" name="db" id="db">
+	<table width="100%">
+	<tr>
+	<td><i class="fa fa-user-o" aria-hidden="true"></i><label><b> Gender </b></label> </td>
+	<td align="center"> <i class="fa fa-tint" aria-hidden="true"></i> <label><b> Blood Group </b></label> </td> </tr>
+	<tr> <td>
+	<div class="radioSelect">
+	  <input type="radio" class="radio-btn" name="gender" checked id="male" value="male"/>
+	  <label class="label">Male</label> 
+	  <input type="radio" class="radio-btn" name="gender"  id="female" value="female" />
+	  <label class="label">Female</label> 
+	</div>
+	</td>
+	<td align="right">
+	<div class="bloodGroup">
+	  <select id="bGroup" name="bGroup">
+	    <option>A Positive</option>
+		<option>A Negative</option>
+		<option>B Positive</option>
+		<option>B Negative</option>
+		<option>AB Positive</option>
+		<option>AB Negative</option>
+		<option>O Positive</option>
+		<option>O Negative</option>
+		<option>Unknown</option>
+	  </select>
+	</div>
+	</td></tr>
+	</table>
+	<div>
+    <i class="fa fa-envelope-o" aria-hidden="true"></i> <label for="email"><b>Email</b></label><span class="error" id="mailError"> </span>
+    <input type="text" placeholder="Enter Email" name="email" id="email">
+	
+	</div>
+	<div>
+    <i class="fa fa-key" aria-hidden="true"></i> <label for="pw"><b>Password</b></label><span class="error" id="pwError"> </span>
+    <input type="password" placeholder="Enter Password" name="pw" id="pw">
+	
+	</div>
+	<div>
+    <i class="fa fa-key" aria-hidden="true"></i> <label for="pw"><b>Confirm Password</b></label> <span class="error" id="pwcError"> </span>
+    <input type="password" placeholder="Confirm Password" name="pw_confirm" id="pw_confirm">
+	
+	</div>
+    <label>
+      <input type="checkbox" name="remember" style="margin-bottom:15px"> Remember me
+    </label>
+	
+
+    <p>By creating an account you agree to our <a href="welcome.html" style="color:dodgerblue">Terms & Privacy</a>.</p>
+
+    <div class="clearfix">
+      <button type="button" class="cancelbtn" onclick="formModule.clearForm()">Cancel</button>
+      <button type="submit" class="signupbtn" id="submit" >Register</button>
+    </div>
+  </div>
+	<div class="signin">
+    <p>Already have an account? <a href="login.cfm">Sign in</a>.</p>
+	</div>
+</form>
+<div id="success"></div>
+
+</center>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="validation.js"></script>
+<script>
+	//method that is called when the document is completely loaded
+	$(document).ready(function(){
+		formModule.init();
+	});
+	</script>
+</body>
+</html>

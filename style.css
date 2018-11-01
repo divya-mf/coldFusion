@@ -1,0 +1,242 @@
+	body {
+	  font-family: 'Open Sans', sans-serif;
+	  font-size: 16px;
+	  color: #4c4c4c;
+	 
+	}
+	.container input[type=text], input[type=password], input[type=date], input[type=email]{
+	  width: 93%;
+	  padding: 15px;
+	  margin: 5px 0 15px 0;
+	  display: inline-block;
+	  border: none;
+	  background: #f1f1f1;
+	}
+
+	.nameDiv input[type=text]{
+	  width: 42%;
+	  padding: 16px;
+	  border: none;
+	  background: #f1f1f1;
+	}
+	.bloodGroup select{
+	  width: 70%;
+	  padding: 11px;
+	  margin-left:75px;
+	  border: none;
+	  background: #f1f1f1;
+	}
+	.container input[type=text]:focus, input[type=password]:focus , input[type=email]:focus {
+	  background-color: #ddd;
+	  border: "";  
+	}
+	hr {
+	  border: 1px solid #f1f1f1;
+	  margin-bottom: 15px;
+	}
+	
+	.signupbtn{
+	  padding: 14px 20px;
+	  background-color: #4CAF50;
+	  color: white;
+	  margin: 8px 0;
+	  border: none;
+	  cursor: pointer;
+	  width: 100%;
+	  opacity: 0.8;
+	}
+	button:hover {
+	  opacity:1;
+	}
+	.cancelbtn {
+	  padding: 14px 20px;
+	  background-color: #f44336;
+	  margin: 8px 0;
+	  border: none;
+	  cursor: pointer;
+	  width: 100%;
+	  opacity: 0.8;
+	  color: white;
+	}
+	.cancelbtn, .signupbtn {
+	  float: left;
+	  width: 50%;
+	}
+	form{
+	 animation-name: trial;
+	  animation-duration: 4s;
+	  }
+	@keyframes trial {
+		 45% {background-color: lightblue;}
+		  85% {background-color: #D3D3D3;} 
+	}
+	.container {
+	  padding: 16px;
+	  width: 450px;
+	  text-align:left;	  
+	}
+	.clearfix::after {
+	  content: "";
+	  clear: both;
+	  display: table;
+	}
+	.signin {
+		background-color: #f1f1f1;
+		text-align: center;
+		padding: 15px;
+	}
+
+	.radioSelect {
+	  padding: 16px 0px 16px 0px;
+	}
+	@media screen and (max-width: 600px) {
+	  .cancelbtn, .signupbtn,.nameDiv input[type=text] {
+		width: 100%;
+	  }
+	}
+	p, h1{
+	line-height:7px;
+	}
+	p{
+	font-size:13px;
+	}
+	#msg
+	{
+		color:red;
+	}
+	#msg li
+	{
+		line-height:13px;
+		 padding-left:20px;
+  text-align:left;
+
+	}
+	#showData
+	{
+		display:none;
+	}
+	.btn {
+    border: none;
+    color: blueviolet;
+    padding: 4px 8px;
+    font-size: 16px;
+    cursor: pointer;
+	}
+	#dataTable{
+	border-collapse: collapse;
+	}
+	#dataTable th {
+	font-size: 13px;
+    background-color: #4CAF50;
+    color: white;
+	text-align: left;
+    padding: 8px;
+	text-align: center;
+	border: 1px solid #ddd;
+	}
+	#dataTable td {
+    text-align: left;
+    padding: 8px;
+	border: 1px solid #ddd;
+	font-size:15px;
+	}
+	#dataTable tr:nth-child(even){
+	background-color: #f2f2f2;
+	}
+	#success{
+		font-family: cursive;
+		display:none;
+		width: 220px;
+		background-color:lemonchiffon;
+		color: #55a20e;
+		margin:5px;
+		animation-name: trans;
+	    animation-duration: 3s;
+	}
+	@keyframes trans {
+		 45% {background-color: yellow;}
+		  
+	}
+	#noData{
+		display:none;
+		width: 220px;
+		padding: 8px;
+		
+	}
+	#remove
+	{ 
+		color:#f44336;
+	}
+	#search
+	{
+		margin: 10px 0px 5px 510px;
+		border: 1px solid #ccc;
+		/* display: block; */
+		padding: 7px;
+		border-radius: 13px	;
+	}
+	#search:focus{
+		outline: none;
+		border-radius: 13px;
+		border: 1px solid #4CAF50;
+	}
+	.error{
+		
+		font-size: 12px;
+		color: red;
+	}
+	#dbError{
+		margin-left: 222px;
+	}
+	#pwError{
+		margin-left: 230px;
+	}
+	#pwcError{
+		margin-left: 173px;
+	}
+	#mailError{
+		margin-left: 295px;
+	}
+	
+	#fError{
+		margin-left: 40px;
+		
+	}
+	#lError{
+		margin-left: 190px;
+		
+	}
+#login{
+    border-radius: 5px;
+    background-color: #f2f2f2;
+    padding: 20px;
+    width: 500px;
+    margin: 130px 400px 200px 420px;
+    float: left;
+}
+#login input {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    background: white;
+}
+#login input[type="submit"]{
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    padding: 16px 32px;
+    text-decoration: none;
+    margin: 4px 2px;
+    cursor: pointer;
+}
+#msg{
+    color:red;
+}
+	#submit:disabled,
+	#submit[disabled]{
+  border: 1px solid #999999;
+  background-color: #cccccc;
+  color: #666666;
+}
+	
