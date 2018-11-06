@@ -6,7 +6,7 @@
      SELECT id FROM user WHERE email = <cfqueryparam value="#userData['email']#" cfsqltype="cf_sql_varchar" />    
     </cfquery>
     <cfif #checkEmail.recordCount# eq 0>
-        <cfquery result="qryResult" datasource="trial">
+        <cfquery result="qryResult">
            INSERT INTO user
             (
                 fname, lname, email, dob, bloodGroup, password, gender

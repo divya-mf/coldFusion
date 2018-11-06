@@ -1,9 +1,12 @@
 <cfset msg = " " />
 <cfif isdefined("form.loginForm")>
   
-   <cfquery name="checkLogin" datasource="trial">
-     SELECT id FROM user WHERE email = <cfqueryparam value="#form.email#" cfsqltype="cf_sql_varchar" /> AND password = <cfqueryparam value="#form.pw#" cfsqltype="cf_sql_varchar" />    
+   <cfquery name="checkLogin">
+     SELECT id,fname,lname FROM user WHERE email = <cfqueryparam value="#form.email#" cfsqltype="cf_sql_varchar" /> AND password = <cfqueryparam value="#form.pw#" cfsqltype="cf_sql_varchar" />    
     </cfquery>
+
+		<cfset session.fname = checkLogin.fname>
+		<cfset session.lname = checkLogin.lname>
     <cfif #checkLogin.recordCount# neq 0>
 		 <cfset msg = " " />
         <cflocation url="./dashboard.cfm"/>
