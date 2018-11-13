@@ -6,7 +6,10 @@
      SELECT id FROM user WHERE email = <cfqueryparam value="#userData['email']#" cfsqltype="cf_sql_varchar" />    
     </cfquery>
     <cfif #checkEmail.recordCount# eq 0>
-        <cfquery result="qryResult">
+		
+		<cfset authenticationService = createobject('component','CFAssignments.authenticationService') />
+		
+       <!--- <cfquery result="qryResult">
            INSERT INTO user
             (
                 fname, lname, email, dob, bloodGroup, password, gender
@@ -22,11 +25,20 @@
                 <cfqueryparam cfsqltype="CF_SQL_VARCHAR" value="#userData['gender']#" />
 
             ) 
-         </cfquery>
-        <cfset jsondata =  SerializeJSON(1)>
+         </cfquery> --->
+		
+		
+		<cfset isInserted = authenticationService.insertUser(userData.fname,userData.lname,userData.email,userData.db,userData.blood_group,userData.password,userData.gender  )/>
+		<cfset jsondata =  SerializeJSON(0)/>
+		
+		<cfif isInserted eq true>
+			
+		</cfif>
+		
+        <cfset jsondata =  SerializeJSON(1)/>
         <cfoutput>#jsondata#</cfoutput>
     <cfelse>
-         <cfset jsondata =  SerializeJSON(0)>
+         <cfset jsondata =  SerializeJSON(0)/>
         <cfoutput>#jsondata#</cfoutput>
     </cfif> 
 </cfif>
