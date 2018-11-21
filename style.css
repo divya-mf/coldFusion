@@ -243,12 +243,12 @@
     list-style-type: none;
 }
 #details{
-    border-radius: 5px;
+   border-radius: 5px;
     background-color: #f2f2f2;
     padding: 20px;
     width: 500px;
-    margin: 130px 400px 200px 130px;
-    float: left;
+    margin: 130px 0 200px 388px;
+    /* float: left; */
 }	
 
 .dropbtn {
@@ -263,4 +263,17 @@
 
 .dropbtn:hover, .dropbtn:focus {
     background-color: #3e8e41;
+}
+.headerMenu{
+	    margin-left: 996px;
+}
+.headbtn {
+        background-color: cornflowerblue;
+    color: white;
+    padding: 8px;
+    font-size: 15px;
+    border: none;
+    cursor: pointer;
+    text-decoration: none;
+    border-radius: 8px;
 }

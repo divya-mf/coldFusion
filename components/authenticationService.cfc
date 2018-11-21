@@ -1,4 +1,5 @@
 <cfcomponent displayname="authenticationService" output="false">
+	<!--- method to add user --->
 	<cffunction name="insertUser" access="public" returntype="boolean">
 		<cfargument name="fname" type="string" required="true"/>
 		<cfargument name="lname" type="string" required="true"/>
@@ -33,4 +34,5 @@
 		</cfif>
 		<cfreturn isInserted />
 	</cffunction>
+	
 </cfcomponent>

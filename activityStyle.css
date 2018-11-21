@@ -1,0 +1,164 @@
+/* css for activity list view*/
+#activityView{
+}
+#addActivity{
+    font-size: 48px;
+    margin-right: 20px;
+    float: right;
+    color: limegreen;
+	margin-top: 30px;
+}
+#newActivity{
+	display:none;
+	border-radius: 5px;
+    background-color: #3f76ad4a;
+    padding: 25px;
+    width: 500px;
+    margin: 100px 400px 200px 400px;
+    font-family: cursive;
+    font-size: 18px;
+
+}
+#newActivity select{
+	  width: 100%;
+	  padding: 15px;
+	  margin: 5px 0 15px 0;
+	  display: inline-block;
+	  border: none;
+	  background: #f1f1f1;
+}
+#newActivity textarea, #date{
+	  width: 94%;
+	  padding: 15px;
+	  margin: 5px 0 15px 0;
+	  display: inline-block;
+	  border: none;
+	  background: #f1f1f1;
+}
+#newActivity label{
+	display: block;
+}
+
+#save{
+	margin-left: 480px;
+    font-size: 24px;
+}
+#msg{
+	display: none;
+	float: right;
+    margin: 15px;
+    background: cornsilk;
+    padding: 5px;
+}
+#error, #errorDate{
+	margin-left: 354px;
+    font-size: 15px;
+    color: red;
+}
+#actTable{
+	width: 100%;
+}
+.tabHead{
+       background-color: aliceblue;
+    border: 1px solid white;
+    font-weight: bold;
+    font-size: 15px;
+}
+.tabBody{
+    background-color:#DCDCDC;
+    border: 1px solid white;
+    height: 300px;
+    overflow-y: scroll;
+}
+.task{
+	padding:20px;
+	background:white;
+    margin: 5px;
+    border-radius: 5px;
+}
+#tabBody td{
+	    padding: 10px;
+        width: 300px;
+}
+.task li{
+	 list-style-type: none;
+    padding: 2px;
+}
+#tabHead th {
+	
+}
+#cancel{
+	margin-left: 480px;
+    font-size: 24px;
+}
+#back{
+	float: right;
+    margin: 20px;
+    text-decoration: none;
+}
+.priority {
+    color: white;
+    font-family: Arial;
+    padding: 3px;
+    max-width: 100px;
+    float: right;
+    border-radius: 4px;
+    margin: -16px -15px 20px 50px;
+    font-size: 13px;
+    cursor: pointer;
+}
+.creationDate{
+	font-size: 13px;
+    font-family: monospace;
+    /* flex-flow: wrap; */
+    margin-top: -19px;
+    margin-left: -16px;
+    padding: 5px;
+}
+.dueDate{
+	font-size: 13px;
+    font-family: monospace;
+    float: right;
+    color: firebrick;
+}
+.HIGH{
+	background-color: red;
+}
+.MEDIUM{
+	background-color: cornflowerblue;
+}
+.LOW{
+	background-color: #40e440;
+}
+.cSearch{
+    padding: 8px;
+    display: inline-block;
+    border: none;
+    background: #F1F1F9;
+}
+.search{
+	float: right;
+}
+.gsearch{
+	float: right;
+    padding: 8px;
+    display: inline-block;
+    border: none;
+    background: #F1F1F9;
+    border-radius: 14px;
+}
+body { margin: 0; font-family: 'Roboto', sans-serif; }
+
+/* drag and drop */
+
+.box-container {
+	height: 200px;
+}
+
+.box-item {
+	width: 100%;
+	z-index: 1000
+}
+.border{
+	border-right: solid 2px white;
+}

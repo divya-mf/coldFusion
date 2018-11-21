@@ -8,9 +8,9 @@
 	<cfif isValid("email", form.email) and len(form.pw)>
 	  <cftry>
 	   <cfquery name="checkLogin">
-		 SELECT id,fname,lname FROM user WHERE email = <cfqueryparam value="#form.email#" cfsqltype="cf_sql_varchar" /> AND password = <cfqueryparam value="#form.pw#" cfsqltype="cf_sql_varchar" />    
+		 SELECT id,fname,lname,role FROM user WHERE email = <cfqueryparam value="#form.email#" cfsqltype="cf_sql_varchar" /> AND password = <cfqueryparam value="#form.pw#" cfsqltype="cf_sql_varchar" />    
 		</cfquery>				
-		<cfset session.loggedInUser = {'fname'=  checkLogin.fname, 'lname'=  checkLogin.lname,'userId'=  checkLogin.id}/>	
+		<cfset session.loggedInUser = {'fname'=  checkLogin.fname, 'lname'=  checkLogin.lname,'userId'=  checkLogin.id, 'role'= checkLogin.role}/>	
 		<cfif #checkLogin.recordCount# neq 0>
 			<cfset msg = " " />
 			<cflocation url="./dashboard.cfm"/>
