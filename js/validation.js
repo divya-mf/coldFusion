@@ -21,7 +21,7 @@ var formModule = (function () {
 		$pwcError=$("#pwcError"),
 		$bGroup = $("#bGroup"),
 		$submit= $("#submit"),
-        $valid;
+		$msg =$("#msg");
 
 		
 	/**
@@ -124,16 +124,17 @@ var formModule = (function () {
 		//ajax to call a cf file which adds information of user to database.
 		$.ajax({
 		  type: "POST",
-		  url: "./register.cfm",
-          contentType: "application/json",
-          data: JSON.stringify( data ),
+		  url: "../controllers/authenticationController.cfm?action=register",
+		  dataType: "json",
+          data : $("#registerForm").serialize(),
 		 // data: data,
-		 // dataType: "json",
+		 // 
 		  success: function(fetch) {
+			  console.log(fetch);
 			if( jQuery.parseJSON(fetch) == 1){
                 $valid = 1;
                 clearForm();
-                window.location = "http://127.0.0.1:8500/CFAssignments/login.cfm";
+                window.location = "../views/login.html";
 				/*var msg ="Registered Successfully";
 				$success.html(msg);
 				$success.show();
@@ -147,6 +148,41 @@ var formModule = (function () {
 				$mailError.show();
                 $valid = 0;
                 return false;
+				}
+             
+		  },
+		  error:function(data)
+		  {
+		  	console.log(data);
+		  }
+		});  
+       
+
+	}
+
+
+	/**
+	 * Logs in the user
+	 * 
+	*/
+	
+	function login(){
+
+		$msg.html("");
+		//ajax to call a cf file which adds information of user to database.
+		$.ajax({
+		  type: "POST",
+		  url: "../controllers/authenticationController.cfm?action=login",
+		  dataType: "json",
+		  data : $("#loginForm").serialize(),
+		  
+		  success: function(fetch) {
+			if( jQuery.parseJSON(fetch) == 1){
+                window.location = "../views/dashboard.cfm";
+                
+			}
+			else{
+				$msg.html("Incorrect credentials");
 				}
              
 		  },
@@ -344,7 +380,8 @@ var formModule = (function () {
 	return{
 		validateForm:validateForm,
 		clearForm:clearForm,
-		init : init
+		init : init,
+		login : login
 	}
 })();
  
